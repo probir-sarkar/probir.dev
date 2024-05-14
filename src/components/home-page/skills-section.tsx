@@ -9,7 +9,7 @@ const SkillsSection = () => {
       <div className="flex gap-1.5 flex-wrap">
         {skills.map((skill) => (
           <div key={skill.name} className="flex items-center">
-            <Badge variant="outline" className="py-1">
+            <Badge variant="outline" className="py-1 hover:bg-secondary/80">
               <skill.icon className="w-5 h-5 mr-1.5" />
               {skill.name}
             </Badge>

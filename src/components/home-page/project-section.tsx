@@ -24,7 +24,7 @@ export default ProjectSection;
 
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
-    <Card className="border  rounded-lg flex flex-col justify-between">
+    <Card className="border  rounded-lg flex flex-col justify-between hover:bg-primary-foreground">
       <CardHeader>
         <div className="flex items-center justify-between">
           <h3 className="text-xl font-bold ">{project.name}</h3>
