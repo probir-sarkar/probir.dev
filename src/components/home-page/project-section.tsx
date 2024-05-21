@@ -3,11 +3,13 @@ import { FaCode } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
 import { Badge } from "../ui/badge";
 import Link from "next/link";
-import { projects } from "@/config/projects";
-import type { Project } from "@/config/projects";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { allProjects } from "./home-page.actions";
+import { Project } from "./home-page.actions";
 
-const ProjectSection = () => {
+const ProjectSection = async () => {
+  const projects = await allProjects();
+  if (!projects) return <div></div>;
   return (
     <section>
       <h2 className="text-xl font-semibold mb-4">Personal Projects</h2>

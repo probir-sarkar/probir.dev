@@ -1,10 +1,9 @@
-import { LinkBadge } from "@/components/common/link-badge";
 import ContactForm from "@/components/home-page/contact-form";
 import ProjectSection from "@/components/home-page/project-section";
 import SkillsSection from "@/components/home-page/skills-section";
-import Skills from "@/components/home-page/skills-section";
 import { SiteHeader } from "@/components/layouts/site-header";
-import Link from "next/link";
+
+export const revalidate = 86400;
 
 const Home = () => {
   return (

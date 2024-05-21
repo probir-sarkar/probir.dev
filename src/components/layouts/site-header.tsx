@@ -2,7 +2,8 @@ import Link from "next/link";
 
 import { siteConfig } from "@/config/site";
 import { Button } from "@/components/ui/button";
-import { FaXTwitter, FaGithub } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa6";
+import { IoDocumentTextSharp } from "react-icons/io5";
 
 import { ModeToggle } from "@/components/layouts/mode-toggle";
 
@@ -21,10 +22,16 @@ export function SiteHeader() {
               <span className="sr-only">GitHub</span>
             </Link>
           </Button>
-          <Button variant="ghost" size="icon" className="size-7">
+          {/* <Button variant="ghost" size="icon" className="size-7">
             <Link href={siteConfig.links.x} target="_blank" rel="noreferrer">
               <FaXTwitter className="size-3 fill-current" />
               <span className="sr-only">X</span>
+            </Link>
+          </Button> */}
+          <Button variant="ghost" size="icon" className="size-7">
+            <Link href={siteConfig.links.resume} target="_blank" rel="noreferrer">
+              <IoDocumentTextSharp className="size-4 fill-current" />
+              <span className="sr-only">Resume</span>
             </Link>
           </Button>
           <ModeToggle />
