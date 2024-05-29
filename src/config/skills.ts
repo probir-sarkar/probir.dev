@@ -1,6 +1,6 @@
 import { FaReact, FaNodeJs, FaGitAlt, FaAws } from "react-icons/fa";
 import { TbBrandRedux } from "react-icons/tb";
-import { SiExpress, SiMongodb, SiNextdotjs, SiRedis } from "react-icons/si";
+import { SiExpress, SiMongodb, SiNextdotjs, SiRedis, SiNestjs, SiDocker } from "react-icons/si";
 import { BiLogoPostgresql, BiLogoJavascript, BiLogoTypescript } from "react-icons/bi";
 
 export const mernStackSkills = [
@@ -57,6 +57,12 @@ export const mernStackSkills = [
         icon: SiExpress,
       },
       {
+        name: "NestJS",
+        description:
+          "Experienced with NestJS for building efficient, reliable, and scalable applications, with a strong focus on TypeScript.",
+        icon: SiNestjs,
+      },
+      {
         name: "AWS",
         description:
           "Utilizing AWS S3 for storage and Elastic Beanstalk for hosting to deploy and manage Node.js applications efficiently.",
@@ -97,15 +103,12 @@ export const mernStackSkills = [
           "Using Git and GitHub for version control and collaboration, streamlining code management and project workflows.",
         icon: FaGitAlt,
       },
+      {
+        name: "Docker",
+        description:
+          "Leveraging Docker for containerization, ensuring consistent deployment and scalability of applications across environments.",
+        icon: SiDocker,
+      },
     ],
   },
 ];
-
-export type Skill = (typeof skills)[number];
-export type Skills = typeof skills;
-export const skills = mernStackSkills.flatMap((skillCategory) => skillCategory.skills);
-
-export const skillsObj = skills.reduce((acc, skill) => {
-  acc[skill.name] = skill;
-  return acc;
-}, {} as Record<string, Skill>);

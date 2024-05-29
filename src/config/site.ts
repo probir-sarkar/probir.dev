@@ -4,7 +4,7 @@ export const siteConfig = {
   name: "Probir",
   description: "Personal website of Probir, built with Next.js.",
   url: "https://probir.dev",
-  // ogImage: "https://sadmn.com/opengraph-image.png",
+  ogImage: "https://ik.imagekit.io/probir/probir.dev/og.jpg?updatedAt=1716963984099",
   links: {
     x: "https://twitter.com/ProbirMe",
     github: "https://github.com/probir-sarkar/probir.dev",
