@@ -112,3 +112,11 @@ export const mernStackSkills = [
     ],
   },
 ];
+export type Skill = (typeof skills)[number];
+export type Skills = typeof skills;
+export const skills = mernStackSkills.flatMap((skillCategory) => skillCategory.skills);
+
+export const skillsObj = skills.reduce((acc, skill) => {
+  acc[skill.name] = skill;
+  return acc;
+}, {} as Record<string, Skill>);
