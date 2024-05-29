@@ -13,4 +13,5 @@ export const siteConfig = {
     // discord: "https://discord.com/users/sadmann7",
     // calDotCom: "https://cal.com/sadmann7",
   },
+  canonical: "https://probirsarkar.com",
 };

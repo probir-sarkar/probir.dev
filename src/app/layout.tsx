@@ -49,6 +49,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/icon.png",
   },
+  alternates: {
+    canonical: siteConfig.canonical,
+  },
   // manifest: absoluteUrl("/site.webmanifest"),
 };
 
