@@ -6,7 +6,7 @@ import { zValidator } from "@hono/zod-validator";
 import { sendTelegramMessage } from "@/config/telegram";
 
 const app = new Hono().basePath("/api/external");
-app.use(cors());
+app.use(cors({ origin: ["https://probirsarkar.com"] }));
 
 app.get("/projects", (c) => {
   return c.json(projects);
