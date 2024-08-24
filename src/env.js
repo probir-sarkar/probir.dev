@@ -8,10 +8,6 @@ export const env = createEnv({
    */
   server: {
     // NODE_ENV: z.enum(["development", "test", "production"]),
-    DIRECTUS_TOKEN: z.string(),
-    DIRECTUS_URL: z.string().url(),
-    TELEGRAM_URL: z.string().url(),
-    TELEGREM_CHAT_ID: z.string().min(1),
   },
 
   /**
@@ -30,10 +26,6 @@ export const env = createEnv({
    */
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
-    DIRECTUS_TOKEN: process.env.DIRECTUS_TOKEN,
-    DIRECTUS_URL: process.env.DIRECTUS_URL,
-    TELEGRAM_URL: process.env.TELEGRAM_URL,
-    TELEGREM_CHAT_ID: process.env.TELEGREM_CHAT_ID,
     NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
   },
   /**

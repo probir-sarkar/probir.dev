@@ -8,7 +8,6 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { toast } from "sonner";
 import { useState } from "react";
 import { FaEnvelopeOpenText } from "react-icons/fa";
-import { submitContactForm } from "./home-page.actions";
 import { contactFormSchema } from "@/config/schemas";
 import { env } from "@/env";
 
