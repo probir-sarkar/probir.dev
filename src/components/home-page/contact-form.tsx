@@ -9,22 +9,25 @@ import { toast } from "sonner";
 import { useState } from "react";
 import { FaEnvelopeOpenText } from "react-icons/fa";
 import { submitContactForm } from "./home-page.actions";
+import { contactFormSchema } from "@/config/schemas";
 
-export const contactFormSchema = z.object({
-  name: z.string().min(2).max(255),
-  email: z.string().email(),
-  message: z.string().min(10).max(5000),
-});
 type ContactFields = z.infer<typeof contactFormSchema>;
 
 const ContactForm = () => {
   const [submitted, setSubmitted] = useState(false);
   const form = useForm<ContactFields>({
-    resolver: zodResolver(contactFormSchema),
+    resolver: zodResolver(contactFormSchema)
   });
   const onSubmit: SubmitHandler<ContactFields> = async (data) => {
     try {
-      const submitForm = await submitContactForm(data);
+      // const submitForm = await submitContactForm(data);
+      const submitForm = await fetch("/api/external/contact-form", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
       if (!submitForm) throw new Error("Failed to submit form");
       form.reset();
       setSubmitted(true);
@@ -33,7 +36,7 @@ const ContactForm = () => {
     }
   };
   const {
-    formState: { isSubmitting },
+    formState: { isSubmitting }
   } = form;
   return (
     <section>
