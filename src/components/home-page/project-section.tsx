@@ -4,10 +4,11 @@ import { FiGithub } from "react-icons/fi";
 import { Badge } from "../ui/badge";
 import Link from "next/link";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
-import { Project } from "./home-page.actions";
-import { projects } from "@/config/projects";
+import { allProjects, Project } from "./home-page.actions";
 
 const ProjectSection = async () => {
+  const projects = await allProjects();
+  if (!projects) return <div></div>;
   return (
     <section>
       <h2 className="text-xl font-semibold mb-4">Personal Projects</h2>

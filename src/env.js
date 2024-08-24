@@ -21,6 +21,7 @@ export const env = createEnv({
    */
   client: {
     // NEXT_PUBLIC_APP_URL: z.string().url(),
+    NEXT_PUBLIC_API_URL: z.string().url(),
   },
 
   /**
@@ -33,6 +34,7 @@ export const env = createEnv({
     DIRECTUS_URL: process.env.DIRECTUS_URL,
     TELEGRAM_URL: process.env.TELEGRAM_URL,
     TELEGREM_CHAT_ID: process.env.TELEGREM_CHAT_ID,
+    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation.

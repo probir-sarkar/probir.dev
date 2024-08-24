@@ -1,5 +1,6 @@
 "use server";
 import { client } from "@/config/directus";
+import { env } from "@/env";
 import { createItem, readItems } from "@directus/sdk";
 
 export const submitContactForm = async (data: any) => {
@@ -21,7 +22,8 @@ export type Project = {
 
 export const allProjects = async () => {
   try {
-    return await client.request<Project[]>(readItems("projects"));
+    const res: Project[] = await fetch(env.NEXT_PUBLIC_API_URL +"/projects").then((res) => res.json());
+    return res;
   } catch (e) {
     return false;
   }

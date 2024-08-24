@@ -10,6 +10,7 @@ import { useState } from "react";
 import { FaEnvelopeOpenText } from "react-icons/fa";
 import { submitContactForm } from "./home-page.actions";
 import { contactFormSchema } from "@/config/schemas";
+import { env } from "@/env";
 
 type ContactFields = z.infer<typeof contactFormSchema>;
 
@@ -20,15 +21,14 @@ const ContactForm = () => {
   });
   const onSubmit: SubmitHandler<ContactFields> = async (data) => {
     try {
-      // const submitForm = await submitContactForm(data);
-      const submitForm = await fetch("/api/external/contact-form", {
+      const submitForm = await fetch(env.NEXT_PUBLIC_API_URL + "/contact-form", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify(data)
-      });
-      if (!submitForm) throw new Error("Failed to submit form");
+      }).then((res) => res.json());
+      if (!submitForm?.success) throw new Error("Failed to submit form");
       form.reset();
       setSubmitted(true);
     } catch (e) {
